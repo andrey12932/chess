@@ -10,4 +10,14 @@ export class Rook extends Figure {
         this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
         this.name = FigureNames.BISHOP;
     }
+
+    canMove(target: Cell): boolean {
+        if (!super.canMove(target))
+            return false;
+        if (this.cell.isEmtyVertical(target))
+            return true;
+        if (this.cell.isEmtyhorizontal(target))
+            return true;
+        return false;
+    }
 }
