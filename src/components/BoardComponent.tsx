@@ -4,6 +4,7 @@ import { Cell } from '../models/Cell';
 import { Player } from '../models/Player';
 import CellComponent from './CellComponent';
 import LostFigures from './LostFigures';
+import Timer from './Timer';
 
 interface BoardProps {
     board: Board;
