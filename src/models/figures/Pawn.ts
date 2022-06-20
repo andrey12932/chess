@@ -11,7 +11,7 @@ export class Pawn extends Figure {
     constructor(color: Colors, cell: Cell) {
         super(color, cell);
         this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
-        this.name = FigureNames.KNIGHT;
+        this.name = FigureNames.PAWN;
     }
 
     canMove(target: Cell): boolean {
