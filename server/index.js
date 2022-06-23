@@ -3,11 +3,18 @@ import 'dotenv/config';
 import sequelize from './db.js';
 import models from './models/models.js';
 import router from './router/index.js';
+import cors from 'cors';
 
 const PORT = process.env.PORT || 5000;
 
 const app = express();
 
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', '*'); // разрешает принимать запросы со всех доменов
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE'); // какие методы в запросах разрешается принимать
+    next();
+});
+app.use(cors());
 app.use(json());
 app.use('/api', router);
 

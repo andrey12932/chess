@@ -29,6 +29,10 @@ function App() {
     setCurrentPlayer(currentPlayer?.color === Colors.WHITE ? blackPlayer : whitePlayer);
   }
 
+  async function handleClick() {
+    await fetch('http://localhost:5000/api/user/reg').then(res => res.json()).then(json => console.log(json));
+  }
+
   return (
     <div className="app">
       <Timer restart={restart} currentPlayer={currentPlayer} />
@@ -38,6 +42,7 @@ function App() {
         currentPlayer={currentPlayer}
         swapPlayer={swapPlayer}
       />
+      <button onClick={handleClick}>Button</button>
     </div>
   );
 }
